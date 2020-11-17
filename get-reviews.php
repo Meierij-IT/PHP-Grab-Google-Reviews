@@ -77,7 +77,6 @@ function getReviews($option) {
     $reviews  = $reviews[6][52][0];                                                                                                                    /* POSITION OF REVIEWS */
   }              
 
-  $fp = fopen('api/reviews.json', 'w');
                                                                                                                                 /* END CHECK */
   $return = '';       
                                                                                                                                  /* INI VAR */
@@ -112,12 +111,13 @@ function getReviews($option) {
         'text' => $review[3],
       );
     } 
+    $fp = fopen('api/reviews.json', 'w');
     fwrite($fp, json_encode($array));
     fclose($fp);      
-                                                                                                                                                /* END LOOP */
-    $return .= '</div>';                                                                                                                               /* CLOSE DIV */
-  }                                                                                                                                                   /* CHECK REVIEWS */
-  return $return;                                                                                                                                      /* RETURN DATA */
-}                                                                                                                                                      /* END OF FUNCTION */
+                                                                                                                                                        /* END LOOP */
+    $return .= '</div>';                                                                                                                                /* CLOSE DIV */
+  }                                                                                                                                                     /* CHECK REVIEWS */
+  return $return;                                                                                                                                       /* RETURN DATA */
+}                                                                                                                                                       /* END OF FUNCTION */
 
 
